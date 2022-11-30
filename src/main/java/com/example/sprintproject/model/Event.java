@@ -6,19 +6,23 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
+
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Getter
 @Setter
-@Builder
-public class Item {
+@ToString
+public class Event {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private long quantity;
-    private boolean isBought;
+    private LocalDateTime date;
+    private String content;
+
 }

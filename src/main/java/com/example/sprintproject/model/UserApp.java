@@ -27,6 +27,9 @@ public class UserApp {
     @OneToMany(targetEntity = Task.class)
     @ToString.Exclude
     private Set<Task> tasks = new HashSet<>();
+    @OneToMany
+    @ToString.Exclude
+    private Set<Event> events = new HashSet<>();
     private String role;
     private boolean isActive;
 
