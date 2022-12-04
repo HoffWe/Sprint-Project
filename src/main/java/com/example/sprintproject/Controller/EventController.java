@@ -7,10 +7,8 @@ import com.example.sprintproject.model.Event;
 import com.example.sprintproject.service.EventService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("api/events")

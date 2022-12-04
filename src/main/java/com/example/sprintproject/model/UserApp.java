@@ -4,7 +4,6 @@ package com.example.sprintproject.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Entity
 @Builder
 @AllArgsConstructor

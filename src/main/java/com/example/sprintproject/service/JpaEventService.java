@@ -37,6 +37,11 @@ public class JpaEventService implements EventService{
         return eventRepository.findById(eventId);
     }
 
+    @Override
+    public List<Event> findByUserAppId(long userId) {
+        return eventRepository.findByUserApp_Id(userId);
+    }
+
 
     @Override
     public void delete(long eventId) {

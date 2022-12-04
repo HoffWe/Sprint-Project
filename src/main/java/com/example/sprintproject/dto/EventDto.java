@@ -1,7 +1,7 @@
 package com.example.sprintproject.dto;
 
-import com.example.sprintproject.model.UserApp;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -21,5 +21,6 @@ public class EventDto {
     @Length(min = 3, max = 150)
     private String content;
     @NotNull
+    @Pattern(regexp = " [1-9][0-9]*|0")
     private long userId;
 }

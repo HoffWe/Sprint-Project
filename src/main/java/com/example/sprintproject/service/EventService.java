@@ -10,5 +10,6 @@ public interface EventService {
 
     Event add (EventDto newEvent);
     Optional<Event> findById(long eventId);
+    List<Event> findByUserAppId(long userId);
     void delete(long eventId);
 }
