@@ -1,5 +1,6 @@
 package com.example.sprintproject.dto;
 
+import com.example.sprintproject.model.UserApp;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
@@ -19,4 +20,6 @@ public class EventDto {
     @NotNull
     @Length(min = 3, max = 150)
     private String content;
+    @NotNull
+    private long userId;
 }

@@ -13,7 +13,4 @@ public class ItemDto {
     @NotNull
     @Pattern(regexp = "[A-Za-z0-9'.\\-\\s,]")
     private String name;
-    @NotNull
-    @Pattern(regexp = "^[0-9]+$")
-    private long quantity;
 }

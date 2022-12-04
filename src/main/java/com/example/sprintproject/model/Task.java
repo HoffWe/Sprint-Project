@@ -1,10 +1,7 @@
 package com.example.sprintproject.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
@@ -21,6 +18,8 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @ManyToOne(targetEntity = UserApp.class)
+    private UserApp user;
     private String title;
     private String content;
     private LocalDateTime creationDate;
