@@ -17,13 +17,10 @@ public class ShoppingList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String name;
     @ManyToOne (targetEntity = UserApp.class)
     private UserApp user;
-    @OneToMany(
-            mappedBy = "shoppingList",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
+    @OneToMany(targetEntity = ShoppingListElement.class)
     @ToString.Exclude
     private Set<ShoppingListElement> shoppingListElements = new HashSet<>();
 }

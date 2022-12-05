@@ -10,6 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+@Data
 public class ShoppingListElement {
 
     @Id
@@ -19,7 +20,6 @@ public class ShoppingListElement {
     private Item item;
     private long quantity;
     private boolean isBought;
-    @ManyToOne(targetEntity = ShoppingList.class)
-    private ShoppingList shoppingList;
+
 
 }

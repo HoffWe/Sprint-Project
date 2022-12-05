@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.Set;
 
@@ -13,11 +14,13 @@ import java.util.Set;
 @Builder
 public class ShoppingListDto {
 
-
+    @NotNull
+    @Length (min = 3, max = 50)
+    private String name;
     @NotNull
     @Pattern(regexp = " [1-9][0-9]*|0")
     private long userId;
     @NotNull
     @Pattern(regexp = " [1-9][0-9]*|0")
-    private Set<ShoppingListElement> shoppingListElements;
+    private long shoppingListId;
 }

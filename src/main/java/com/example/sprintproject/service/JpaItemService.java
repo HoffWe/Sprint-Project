@@ -3,9 +3,11 @@ package com.example.sprintproject.service;
 import com.example.sprintproject.dto.ItemDto;
 import com.example.sprintproject.model.Item;
 import com.example.sprintproject.repository.ItemRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class JpaItemService implements ItemService{
 
     private final ItemRepository itemRepository;
