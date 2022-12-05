@@ -14,7 +14,6 @@ public interface ShoppingListService {
     Optional<ShoppingList> findById(long id);
     List<ShoppingList> findAll();
     void deleteById(long id);
-    ShoppingList update (ShoppingList updatedShoppingList);
 
 
 

@@ -2,6 +2,7 @@ package com.example.sprintproject.dto;
 
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -23,5 +24,8 @@ public class TaskDto {
     private LocalDateTime creationDate;
     @NotNull
     private LocalDateTime deadline;
+    @NotNull
+    @Pattern(regexp = " [1-9][0-9]*|0")
+    private long userid;
 
 }

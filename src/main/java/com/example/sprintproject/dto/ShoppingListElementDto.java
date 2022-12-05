@@ -16,4 +16,5 @@ public class ShoppingListElementDto {
     @NotNull
     @Pattern(regexp = " [1-9][0-9]*|0")
     private long quantity;
+    private boolean isBought;
 }

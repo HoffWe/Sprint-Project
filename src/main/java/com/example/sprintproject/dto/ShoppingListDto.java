@@ -20,7 +20,6 @@ public class ShoppingListDto {
     @NotNull
     @Pattern(regexp = " [1-9][0-9]*|0")
     private long userId;
-    @NotNull
-    @Pattern(regexp = " [1-9][0-9]*|0")
-    private long shoppingListId;
+    private Set<ShoppingListElementDto> shoppingListElements;
+
 }

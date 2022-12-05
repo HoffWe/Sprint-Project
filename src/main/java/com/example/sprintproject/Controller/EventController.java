@@ -24,12 +24,12 @@ public class EventController {
         return ResponseEntity.ok(eventService.add(eventDto));
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable long id) {
         eventService.delete(id);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<EventDto> findById(@PathVariable long id){
         Optional<Event> optionalEvent = eventService.findById(id);
         return optionalEvent.map(event -> ResponseEntity.ok(EventMapper.mapToDto(event))).orElseGet(()-> ResponseEntity.of(Optional.empty()));

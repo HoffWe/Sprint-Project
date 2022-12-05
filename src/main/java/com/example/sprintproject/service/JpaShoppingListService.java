@@ -53,9 +53,4 @@ public class JpaShoppingListService implements ShoppingListService{
     shoppingListRepository.deleteById(id);
     }
 
-    @Override
-    public ShoppingList update(ShoppingList updatedShoppingList) {
-        shoppingListRepository.save(updatedShoppingList);
-        return updatedShoppingList;
-    }
 }
