@@ -27,5 +27,7 @@ public class TaskDto {
     @NotNull
     @Pattern(regexp = " [1-9][0-9]*|0")
     private long userid;
+    private LocalDateTime finishDate;
+    private boolean isFinished;
 
 }

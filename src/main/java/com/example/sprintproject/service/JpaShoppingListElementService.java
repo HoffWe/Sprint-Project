@@ -4,9 +4,11 @@ import com.example.sprintproject.dto.ShoppingListElementDto;
 import com.example.sprintproject.model.Item;
 import com.example.sprintproject.model.ShoppingListElement;
 import com.example.sprintproject.repository.ShoppingListElementRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class JpaShoppingListElementService implements ShoppingListElementService{
 
     private final ShoppingListElementRepository shoppingListElementRepository;

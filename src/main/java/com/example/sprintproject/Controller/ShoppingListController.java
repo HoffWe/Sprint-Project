@@ -6,7 +6,6 @@ import com.example.sprintproject.model.ShoppingList;
 import com.example.sprintproject.service.ShoppingListService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -29,7 +28,9 @@ public class ShoppingListController {
     @GetMapping("/{id}")
     public ResponseEntity<ShoppingListDto> findById(@PathVariable long id){
         Optional<ShoppingList> optionalShoppingList = shoppingListService.findById(id);
-        return optionalShoppingList.map(shoppingList -> ResponseEntity.ok(ShoppingListMapper.mapToDto(shoppingList))).orElseGet(()-> ResponseEntity.of(Optional.empty()));
+        return optionalShoppingList.map(shoppingList -> ResponseEntity
+                        .ok(ShoppingListMapper.mapToDto(shoppingList)))
+                        .orElseGet(()-> ResponseEntity.of(Optional.empty()));
     }
     @GetMapping("")
     public List<ShoppingListDto> findAll(){
