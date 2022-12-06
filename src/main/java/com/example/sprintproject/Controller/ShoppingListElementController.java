@@ -5,6 +5,7 @@ import com.example.sprintproject.dto.ShoppingListElementDto;
 import com.example.sprintproject.mapper.ShoppingListElementMapper;
 import com.example.sprintproject.model.ShoppingListElement;
 import com.example.sprintproject.service.ShoppingListElementService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +33,13 @@ public class ShoppingListElementController {
                 .orElseGet(() -> ResponseEntity.of(Optional.empty()));
     }
 
+    @PutMapping("")
+    public ResponseEntity<ShoppingListElement> update(@RequestBody ShoppingListElement element) {
+        if (shoppingListElementService.findById(element.getId()).isPresent())
+        return ResponseEntity.ok(shoppingListElementService.update(element));
+        else
+            return ResponseEntity.status(HttpStatus.CREATED).body(shoppingListElementService.update(element));
+    }
     @DeleteMapping ("/{id}")
     public void delete(@PathVariable long id){
         shoppingListElementService.deleteById(id);

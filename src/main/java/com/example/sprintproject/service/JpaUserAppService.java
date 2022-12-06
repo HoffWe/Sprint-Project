@@ -3,9 +3,13 @@ package com.example.sprintproject.service;
 import com.example.sprintproject.dto.UserAppDto;
 import com.example.sprintproject.model.UserApp;
 import com.example.sprintproject.repository.UserAppRepository;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class JpaUserAppService implements UserAppService{
 
     private final UserAppRepository userAppRepository;
@@ -20,7 +24,7 @@ public class JpaUserAppService implements UserAppService{
                 .userName(newUser.getUserName())
                 .password(newUser.getPassword())
                 .eMail(newUser.getEMail())
-                .role("user")
+                .role("USER")
                 .isActive(false)
                 .build();
         return userAppRepository.save(user);

@@ -35,6 +35,11 @@ public class JpaShoppingListElementService implements ShoppingListElementService
     }
 
     @Override
+    public ShoppingListElement update(ShoppingListElement shoppingListElement) {
+        return shoppingListElementRepository.save(shoppingListElement);
+    }
+
+    @Override
     public void deleteById(long id) {
     shoppingListElementRepository.deleteById(id);
     }

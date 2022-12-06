@@ -20,4 +20,5 @@ public class UserAppDto {
     @NotNull
     @Email
     private String eMail;
+    private String role;
 }

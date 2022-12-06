@@ -8,6 +8,7 @@ public interface ShoppingListElementService {
 
     ShoppingListElement add (ShoppingListElementDto shoppingListElementDto);
     Optional<ShoppingListElement> findById(long id);
+    ShoppingListElement update(ShoppingListElement shoppingListElement);
     void deleteById(long id);
 
 }
