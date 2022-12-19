@@ -3,7 +3,6 @@ package com.example.sprintproject.Controller;
 
 import com.example.sprintproject.dto.TaskDto;
 import com.example.sprintproject.mapper.TaskMapper;
-import com.example.sprintproject.model.ShoppingListElement;
 import com.example.sprintproject.model.Task;
 import com.example.sprintproject.service.TaskService;
 import org.springframework.http.HttpStatus;
