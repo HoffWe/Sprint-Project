@@ -3,7 +3,7 @@ package com.example.sprintproject.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
 @Entity
@@ -21,7 +21,7 @@ public class Event {
     private String name;
     @ManyToOne (targetEntity = UserApp.class)
     private UserApp userApp;
-    private LocalDateTime date;
+    private LocalDate date;
     private String content;
 
 }

@@ -47,4 +47,9 @@ public class JpaEventService implements EventService{
     public void delete(long eventId) {
         eventRepository.deleteById(eventId);
     }
+
+    @Override
+    public List<Event> findAll() {
+        return eventRepository.findAll();
+    }
 }

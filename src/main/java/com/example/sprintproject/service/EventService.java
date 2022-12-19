@@ -12,4 +12,5 @@ public interface EventService {
     Optional<Event> findById(long eventId);
     List<Event> findByUserAppId(long userId);
     void delete(long eventId);
+    List<Event> findAll();
 }

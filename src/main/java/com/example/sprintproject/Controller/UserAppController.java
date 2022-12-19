@@ -1,19 +1,19 @@
 package com.example.sprintproject.Controller;
 
 import com.example.sprintproject.dto.UserAppDto;
-import com.example.sprintproject.mapper.UserAppMapper;
 import com.example.sprintproject.model.UserApp;
 import com.example.sprintproject.service.UserAppService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserAppController {
 
     private final UserAppService userAppService;
@@ -28,15 +28,13 @@ public class UserAppController {
     }
 
     @GetMapping("")
-    public List<UserAppDto> findAll(){
-        return userAppService.findAll().stream()
-                .map(UserAppMapper::mapToDto)
-                .collect(Collectors.toList());
+    public List<UserApp> findAll(){
+        return new ArrayList<>(userAppService.findAll());
     }
     @GetMapping("/{id}")
-    public ResponseEntity<UserAppDto> findById(@PathVariable long id){
+    public ResponseEntity<Optional<UserApp>> findById(@PathVariable long id){
         Optional<UserApp> optionalUserApp = userAppService.findById(id);
-        return optionalUserApp.map(userApp -> ResponseEntity.ok(UserAppMapper.mapToDto(userApp)))
+        return optionalUserApp.map(userApp -> ResponseEntity.ok(optionalUserApp))
                 .orElseGet(()->ResponseEntity.of(Optional.empty()));
     }
     @DeleteMapping("/{id}")

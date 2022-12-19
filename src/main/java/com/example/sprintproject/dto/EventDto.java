@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -16,7 +16,7 @@ public class EventDto {
     @Length(min = 3, max = 50)
     private String name;
     @NotNull
-    private LocalDateTime date;
+    private LocalDate date;
     @NotNull
     @Length(min = 3, max = 150)
     private String content;

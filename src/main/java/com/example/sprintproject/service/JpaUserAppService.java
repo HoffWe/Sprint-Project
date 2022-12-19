@@ -10,7 +10,7 @@ import java.util.Optional;
 
 
 @Service
-public class JpaUserAppService implements UserAppService{
+public class JpaUserAppService implements UserAppService {
 
     private final UserAppRepository userAppRepository;
 
@@ -24,8 +24,7 @@ public class JpaUserAppService implements UserAppService{
                 .userName(newUser.getUserName())
                 .password(newUser.getPassword())
                 .eMail(newUser.getEMail())
-                .role("USER")
-                .isActive(false)
+                .role("ROLE USER")
                 .build();
         return userAppRepository.save(user);
     }

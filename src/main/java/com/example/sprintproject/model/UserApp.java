@@ -20,6 +20,7 @@ public class UserApp {
     private String password;
     private String eMail;
     private String role;
-    private boolean isActive;
+    private boolean locked;
 
 }
+
